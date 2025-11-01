@@ -36,6 +36,12 @@ experiences:
   subtitle: "Fintech company focused on digital banking in Latin America"
   category: "work"
 
+- place: "Wisy Platforms, Inc."
+  time: "Sep. 2020 - Dec. 2020"
+  title: "Artificial Intelligence Intern"
+  subtitle: "Developed object detection models in TensorFlow for supermarket shelf analysis; achieved 60% MAP@10 and received training from Google developers."
+  category: "work"
+
 - place: "National University of Engineering"
   time: "2014 - 2021"
   title: "B.Sc. in Computer Science"

@@ -4,7 +4,7 @@ papers:
     authors: "Rojas, H., Rojas, N., Espinoza, J. B., & Huamanchumo, L."
     venue: "IFAC-PapersOnLine, 2025"
     paper_pdf: "https://lib.physcon.ru/doc?id=3950c208f584"
-    code: "https://arxiv.org/abs/2407.02700"
+    code: "https://github.com/Nicerova7/output-range-analysis-for-deep-neural-networks-with-simulated-annealing"
     selected: y
 
   - title: "Statistical Hypothesis Testing for Information Value (IV)"
@@ -12,6 +12,7 @@ papers:
     authors: "Rojas, H., Alvarez, C., & <b><u>Rojas, N.</u></b>"
     venue: "Journal of Statistical Theory and Applications (Accepted, Oct 2025)"
     paper_pdf: "https://link.springer.com/article/10.1007/s44199-025-00144-9"
+    code: "https://github.com/Nicerova7/statistical_iv"
     selected: y
 
   - title: "Defog Artificial Intelligence Glasses: Neural Networks for the Imperfect Real World"

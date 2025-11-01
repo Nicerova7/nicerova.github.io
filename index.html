@@ -19,42 +19,56 @@ layout: default
 
   <div class="row no-gutters">
     <div class="col-12 col-md-12 text-md-left">
-      <b class="bbold" style="color:#fa8072;">Oct 2025</b>&nbsp;&nbsp;&nbsp;&nbsp;
-      Our paper <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mqDs82MAAAAJ&citation_for_view=mqDs82MAAAAJ:u-x6o8ySG0sC"><i>Statistical Hypothesis Testing for Information Value (IV)</i></a> was accepted to the <b>Journal of Statistical Theory and Applications</b>.
+      <b class="bbold" style="color:#fa8072;">October 2025</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      Our paper <a href="https://arxiv.org/abs/2407.02700" target="_blank"><i>A simple algorithm for output range analysis for deep neural networks</i></a> was published in the <a href="https://lib.physcon.ru/doc?id=3950c208f584" target="_blank"><i>Cybernetics and Physics Journal</i>!</a>.
     </div>
   </div>
 
   <div class="row no-gutters">
     <div class="col-12 col-md-12 text-md-left">
-      <b class="bbold" style="color:#fa8072;">Aug 2025</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b class="bbold" style="color:#fa8072;">October 2025</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      Our paper <a href="https://arxiv.org/abs/2309.13183"><i>Statistical Hypothesis Testing for Information Value (IV)</i></a> was accepted to the  <a href="https://lib.physcon.ru/doc?id=3950c208f584" target="_blank"><i>Journal of Statistical Theory and Applications</i>!</a>.
+    </div>
+  </div>
+
+  <div class="row no-gutters">
+    <div class="col-12 col-md-12 text-md-left">
+      <b class="bbold" style="color:#fa8072;">August 2025</b>&nbsp;&nbsp;&nbsp;&nbsp;
       Admitted to the <b><a href="https://www.tum.de/en/">Technical University of Munich</a></b> for the <b>M.Sc. in Informatics</b>.
     </div>
   </div>
 
   <div class="row no-gutters">
     <div class="col-12 col-md-12 text-md-left">
-      <b class="bbold" style="color:#fa8072;">Jun 2025</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b class="bbold" style="color:#fa8072;">June 2025</b>&nbsp;&nbsp;&nbsp;&nbsp;
       Admitted to the <b><a href="https://www.ip-paris.fr/en/education/masters/computer-science-program/master-year-1-data-and-artificial-intelligence">Polytechnic Institute of Paris</a></b> for the <b>Master Year 1 in Data and Artificial Intelligence</b>.
     </div>
   </div>
 
   <div class="row no-gutters">
     <div class="col-12 col-md-12 text-md-left">
-      <b class="bbold" style="color:#fa8072;">Feb 2024</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b class="bbold" style="color:#fa8072;">February 2024</b>&nbsp;&nbsp;&nbsp;&nbsp;
       Awarded the <b>AAAI-24 Undergraduate Consortium Scholarship</b> at the <a href="https://aaai.org/">AAAI Conference on Artificial Intelligence</a>.
     </div>
   </div>
 
   <div class="row no-gutters">
+  <div class="col-12 col-md-12 text-md-left">
+    <b class="bbold" style="color:#fa8072;">January 2024</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    Selected as a <b>participant in the <a href="https://latinresearchprogram.github.io/GoogleExploreCSR/" target="_blank">Google ExploreCSR: Latin American Research Program</a></b>, an initiative by Google Research supporting Latin American students in AI and Computer Science.
+  </div>
+</div>
+
+  <div class="row no-gutters">
     <div class="col-12 col-md-12 text-md-left">
-      <b class="bbold" style="color:#fa8072;">Sep 2023</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b class="bbold" style="color:#fa8072;">September 2023</b>&nbsp;&nbsp;&nbsp;&nbsp;
       Received a <b>Travel Award</b> to attend the <a href="https://iccv2023.thecvf.com/">ICCV 2023 Workshop LatinX in AI Research</a> in Paris.
     </div>
   </div>
 
   <div class="row no-gutters">
     <div class="col-12 col-md-12 text-md-left">
-      <b class="bbold" style="color:#fa8072;">Aug 2014</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      <b class="bbold" style="color:#fa8072;">August 2014</b>&nbsp;&nbsp;&nbsp;&nbsp;
       Ranked <b>1st</b> in the entrance examination for the <b>National University of Engineering</b> (Computer Science).
     </div>
   </div>
@@ -86,65 +100,45 @@ layout: default
 <div class="docs-section" id="publications">
   <h5>Publications</h5>
 
-  <!-- <p>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a>.<br/> -->
-  </p>
-
-  <!-- <ul class="tab-nav">
-    <li><div class="button active" data-ref="#papers-selected">Selected</div></li>
-    <li><div class="button" data-ref="#papers-all">All</div></li>
-  </ul> -->
-
   <div class="tab-content">
     <div class="tab-pane active" id="papers-selected">
       {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
-      {% for paper in selected_papers %}
-        <div class="paper">
-          <div class="row">
-            <!--
-            <div class="four columns">
-              <div class="figure">
-                <img src="{{ paper.image }}" width="100%">
-              </div>
-            </div>
-            -->
-            <div class="twelve columns">
-              {% if paper.year %}
-                <p><h5>{{ paper.year }}</h5><hr /></p>
+      {% assign grouped = selected_papers | group_by: "year" %}
+      {% for year_group in grouped reversed %}
+        <h5>{{ year_group.name }}</h5>
+        <hr/>
+        {% for paper in year_group.items %}
+          <div class="paper" style="margin-bottom: 20px;">
+            <p class="title"><b>{{ paper.title }}</b></p>
+            <p>{{ paper.authors }}</p>
+            <p><i>{{ paper.venue }}</i></p>
+            <div class="paper-buttons">
+              {% if paper.paper_pdf %}
+                <a class="button" href="{{ paper.paper_pdf }}" target="_blank">Paper</a>
               {% endif %}
-              <p class="title"><b>{{ paper.title }}</b></p>
-              <p>{{ paper.authors }}</p>
-              <p><i>{{ paper.venue }}</i></p>
-              <div class="paper-buttons">
-                {% if paper.paper_pdf %}
-                  <a class="button" href="{{ paper.paper_pdf }}" target="_blank">Paper</a>
-                {% endif %}
-
-                {% if paper.poster %}
-                  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-                {% endif %}
-
-                {% if paper.video %}
-                  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-                {% endif %}
-
-                {% if paper.code %}
-                  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-                {% endif %}
-                
-                {% if paper.slides %}
-                  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-                {% endif %}
-                
-                {% if paper.twitter %}
-                  <a class="button" href="{{ paper.twitter }}" target="_blank">Twitter</a>
-                {% endif %}
-              </div>
+              {% if paper.poster %}
+                <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+              {% endif %}
+              {% if paper.video %}
+                <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+              {% endif %}
+              {% if paper.code %}
+                <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+              {% endif %}
+              {% if paper.slides %}
+                <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+              {% endif %}
+              {% if paper.twitter %}
+                <a class="button" href="{{ paper.twitter }}" target="_blank">Twitter</a>
+              {% endif %}
             </div>
-          </div>       
-        </div>
+          </div>
+        {% endfor %}
       {% endfor %}
-      <h6><b><i>( * indicates equal contribution )</i></b></h6>
+      <h6><b><i>(* indicates equal contribution)</i></b></h6>
     </div>
+  </div>
+</div>
     
     <!-- <div class="tab-pane" id="papers-all">
       {% for paper in site.data.publications.papers %}
@@ -192,51 +186,30 @@ layout: default
 <div class="docs-section" id="projects">
   <h4>Projects</h4>
 
-  <ul class="tab-nav">
-    <li><div class="button active" data-ref="#projects-selected">Selected</div></li>
-    <li><div class="button" data-ref="#projects-all">All</div></li>
-  </ul>
-
   <div class="tab-content">
-    <!-- Selected Projects -->
     <div class="tab-pane active" id="projects-selected">
       {% assign selected_projects = site.data.projects.projects | where: "selected", "y" %}
       {% for project in selected_projects %}
-        {% assign index_modulo = forloop.index0 | modulo:3 %}
+        {% assign index_modulo = forloop.index0 | modulo:2 %}
         {% if index_modulo == 0 %}
           <div class="row">
         {% endif %}
 
-          <div class="four columns">
+          <div class="six columns">
             <div class="project-container">
-              <div class="project-image-container">
-                <a href="{{ project.url }}" target="_blank">
-                  <img src="{{ project.thumbnail }}" class="u-max-full-width" />
-                </a>
-              </div>
               <div class="project-caption">
-                <b>{{ project.title }}</b> <br/>
+                <b>{{ project.title }}</b><br/>
                 {{ project.subtitle }}
+                {% if project.url %}
+                  <br/><a href="{{ project.url }}" target="_blank">Learn more</a>
+                {% endif %}
               </div>
             </div>
           </div>
 
-        {% if index_modulo == 2 %}
+        {% if index_modulo == 1 or forloop.last %}
           </div>
         {% endif %}
-      {% endfor %}
-    </div>
-
-    <!-- All Projects (optional extended section) -->
-    <div class="tab-pane" id="projects-all">
-      {% for project in site.data.projects.projects %}
-        <div class="row">
-          <div class="twelve columns">
-            <h5>{{ project.title }}</h5>
-            <p>{{ project.subtitle }}</p>
-            <p><a href="{{ project.url }}" target="_blank">Learn more</a></p>
-          </div>
-        </div>
       {% endfor %}
     </div>
   </div>

@@ -1,8 +1,8 @@
 papers:
   - title: "A Simple Algorithm for Output Range Analysis for Deep Neural Networks"
     year: "2025"
-    authors: "Rojas, H., Rojas, N., Espinoza, J. B., & Huamanchumo, L."
-    venue: "IFAC-PapersOnLine, 2025"
+    authors: "Rojas, H., <b><u>Rojas, N.</u></b>, Espinoza, J. B., & Huamanchumo, L."
+    venue: "Cybernetics and Physics, 14(2), 162-173, 2025"
     paper_pdf: "https://lib.physcon.ru/doc?id=3950c208f584"
     code: "https://github.com/Nicerova7/output-range-analysis-for-deep-neural-networks-with-simulated-annealing"
     selected: y
